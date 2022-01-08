@@ -1,0 +1,55 @@
+div.card.h-100 {
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  .card-title {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 17px;
+    letter-spacing: -0.75px;
+  }
+  cursor: pointer;
+  .card-body {
+    padding: 10px;
+    .text-start {
+      h5 {
+        color: #333333;
+        font-weight: 700;
+      }
+      & > p {
+        font-size: 13px;
+        color: rgb(165, 150, 150);
+      }
+    }
+    .text-end {
+      del {
+        font-size: small;
+        font-weight: 600;
+        margin-right: 10px !important;
+        sub {
+          top: 5px;
+          right: -7px;
+        }
+      }
+      p {
+        font-weight: 700;
+        margin-right: 10px !important;
+
+        sub {
+          top: 5px;
+          right: -7px;
+        }
+      }
+    }
+    ul {
+      li {
+        color: rgb(230, 230, 32);
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(116, 208, 211, 0.23) 0px 3px 6px !important;
+    transition: 0.4s;
+  }
+}
