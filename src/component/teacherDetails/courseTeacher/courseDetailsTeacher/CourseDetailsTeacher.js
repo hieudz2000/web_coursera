@@ -56,6 +56,10 @@ function CourseDetailsTeacher() {
               <span>499,000</span> <sup>đ</sup>{" "}
             </strong>
             <br />
+            <del className="justify-content-end">
+              800,000<sup>đ</sup>
+            </del>
+            <h6 className="justify-content-end">OFF 38%</h6>
             <button type="button" className="btn btn-danger w-100">
               CHI TIẾT
             </button>

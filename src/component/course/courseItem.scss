@@ -48,9 +48,8 @@ div.card.h-100 {
     }
   }
 
-  // &:hover {
-  //   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-  //     rgba(116, 208, 211, 0.23) 0px 3px 6px !important;
-  //   transition: 0.4s;
-  // }
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(116, 208, 211, 0.23) 0px 3px 6px !important;
+    transition: 0.4s;
+  }
 }
