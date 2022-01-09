@@ -59,7 +59,7 @@ class About extends Component {
                     <div>
                       <div
                         class="modal fade"
-                        id={id3 + 100}
+                        id={"h" + id1 + id3}
                         aria-hidden="true"
                         aria-labelledby="exampleModalToggleLabel"
                         tabindex="-1"
@@ -71,7 +71,7 @@ class About extends Component {
                                 class="modal-title"
                                 id="exampleModalToggleLabel"
                               >
-                                <li key={id3} className="nav-item">
+                                <li key={id3 + id1} className="nav-item">
                                   <i className="fa fa-play-circle"></i>
                                   {list3.ten}: {list3.noidung}
                                 </li>
@@ -87,7 +87,7 @@ class About extends Component {
                               <iframe
                                 width="100%"
                                 height={400}
-                                src="https://www.youtube.com/embed/5kSG8VkGpIs"
+                                src={list3.link}
                                 title="video"
                               />
                             </div>
@@ -95,9 +95,9 @@ class About extends Component {
                         </div>
                       </div>
                       <a
-                        class="btn btn-primary"
+                        class="btn "
                         data-bs-toggle="modal"
-                        href={"#" + id3 + 100}
+                        href={"#" + "h" + id1 + id3}
                         role="button"
                       >
                         <i className="fa fa-play-circle"></i>
