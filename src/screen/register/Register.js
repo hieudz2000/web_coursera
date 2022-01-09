@@ -89,18 +89,9 @@ export default function Register() {
             Đăng ký
           </button>
         </div>
-        <div className="text-center">
-          <span className="txt-1">Hoặc</span>
-        </div>
-        <div className="another-login">
-          <div className="custom-signin fbook">
-            <i className="fa fa-facebook-official"></i>
-            <span className="buttonText">Đăng nhập bằng Facebook</span>
-          </div>
-        </div>
         <div className="text center">
           <span>Bạn có tài khoản?</span>
-          <a href="/">Đăng nhập</a>
+          <a href="/login">Đăng nhập</a>
           <br />
         </div>
       </form>

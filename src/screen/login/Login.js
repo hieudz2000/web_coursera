@@ -55,22 +55,10 @@ export default function Login() {
             Đăng nhập
           </button>
         </div>
-        <div className="pb-3 text-center">
-          <span className="txt-1">Hoặc đăng nhập với</span>
-        </div>
-        <div className="another-login">
-          <div className="custom-signin gplus">
-            <i className="fa fa-google"></i>
-            <span className="buttonText">Google</span>
-          </div>
-          <div className="custom-signin fbook">
-            <i className="fa fa-facebook-official"></i>
-            <span className="buttonText">Facebook</span>
-          </div>
-        </div>
+
         <div className="text center">
           <span>Bạn chưa có tài khoản?</span>
-          <a href="/">Đăng ký mới</a>
+          <a href="/register">Đăng ký mới</a>
           <br />
           <a href="/">Quên mật khẩu</a>
         </div>
