@@ -93,7 +93,9 @@ const About = () => {
   }, []);
   return (
     <div>
-      <Accordion defaultActiveKey="0">{showsIntroduct(courses)}</Accordion>
+      <Accordion defaultActiveKey="0">
+        {courses === null ? "" : showsIntroduct(courses)}
+      </Accordion>
     </div>
   );
 };
