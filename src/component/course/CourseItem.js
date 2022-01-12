@@ -39,9 +39,6 @@ class CourseItem extends Component {
                 </div>
                 <div className="col-6">
                   <div className="text-end mt-1">
-                    <del className="m-0 p-0 d-block position-relative">
-                      700.000 <sub className="d-block position-absolute">đ</sub>
-                    </del>
                     <p className="p-0 m-0 d-block position-relative">
                       290.000 <sub className="d-block position-absolute">đ</sub>
                     </p>

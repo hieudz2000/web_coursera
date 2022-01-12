@@ -1,137 +1,101 @@
-import { Component } from "react";
-import { connect } from "react-redux";
+import { Component, useEffect, useState } from "react";
+
 import { Accordion } from "react-bootstrap";
 import "./about.scss";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-class About extends Component {
-  render() {
+
+import Axios from "axios";
+import api from "../../../../json/api.json";
+
+function showsIntroduct(course) {
+  return course[2].map((list1, id1) => {
     return (
-      <div>
-        <Accordion defaultActiveKey="0">
-          {this.showsIntroduct(this.props.course)}
-        </Accordion>
-      </div>
-    );
-  }
-  MyVerticallyCenteredModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
+      <Accordion.Item
+        eventKey={id1}
+        key={id1 + "2"}
+        style={{ border: "none", borderBottom: "1px solid gray" }}
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-  showsIntroduct(course) {
-    return course.map((list, id) => {
-      return list.noi_dung.map((list1, id1) => {
-        return (
-          <Accordion.Item
-            eventKey={id1}
-            style={{ border: "none", borderBottom: "1px solid gray" }}
-          >
-            <Accordion.Header style={{ fontSize: 18 }}>
-              {list1.chuong}:{list1.noidung}
-            </Accordion.Header>
-            <Accordion.Body>
-              <ul className="nav flex-column">
-                {list1.bai.map((list3, id3) => {
-                  return (
-                    <div>
-                      <div
-                        class="modal fade"
-                        id={"h" + id1 + id3}
-                        aria-hidden="true"
-                        aria-labelledby="exampleModalToggleLabel"
-                        tabindex="-1"
-                      >
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5
-                                class="modal-title"
-                                id="exampleModalToggleLabel"
-                              >
-                                <li key={id3 + id1} className="nav-item">
-                                  <i className="fa fa-play-circle"></i>
-                                  {list3.ten}: {list3.noidung}
-                                </li>
-                              </h5>
-                              <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              ></button>
-                            </div>
-                            <div class="modal-body">
-                              <iframe
-                                width="100%"
-                                height={400}
-                                src={list3.link}
-                                title="video"
-                              />
-                            </div>
-                          </div>
+        <Accordion.Header style={{ fontSize: 18 }}>
+          {"Chuong " + (id1 + 1)}:{list1.chap.Chap_description}
+        </Accordion.Header>
+        <Accordion.Body>
+          <ul className="nav flex-column">
+            {list1.lesson.map((list3, id3) => {
+              return (
+                <div key={id3 + id1}>
+                  <div
+                    className="modal fade"
+                    id={"h" + id1 + id3}
+                    aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel"
+                    tabIndex="-1"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5
+                            className="modal-title"
+                            id="exampleModalToggleLabel"
+                          >
+                            <li className="nav-item">
+                              <i className="fa fa-play-circle"></i>
+                              {"Bai " + (id3 + 1)}: {list3.Lesson_header}
+                            </li>
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <iframe
+                            width="100%"
+                            height={400}
+                            src={list3.Lesson_video}
+                            title="video"
+                          />
                         </div>
                       </div>
-                      <a
-                        class="btn "
-                        data-bs-toggle="modal"
-                        href={"#" + "h" + id1 + id3}
-                        role="button"
-                      >
-                        <i className="fa fa-play-circle"></i>
-                        {list3.ten}: {list3.noidung}
-                      </a>
-                      {/* 
-         <li key={id3} className="nav-item">
-            //{" "}
-            <a
-            href="https://www.youtube.com/embed/5kSG8VkGpIs"
-            className="nav-link h"
-            style={{ fontSize: 15 }}
-            >
-            {" "}
-            <i className="fa fa-play-circle"></i>
-            {list3.ten}: {list3.noidung}
-            </a>
-            //{" "}
-         </li>
-         */}
                     </div>
-                  );
-                })}
-              </ul>
-            </Accordion.Body>
-          </Accordion.Item>
-        );
-      });
-    });
-  }
+                  </div>
+                  <a
+                    className="btn "
+                    data-bs-toggle="modal"
+                    href={"#" + "h" + id1 + id3}
+                    role="button"
+                  >
+                    <i className="fa fa-play-circle"></i>
+                    {"Bai " + (id3 + 1)}: {list3.Lesson_header}
+                  </a>
+                  {/*
+                   */}
+                </div>
+              );
+            })}
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+    );
+  });
 }
-const mapState = (state) => {
-  return {
-    course: state.course_content,
-  };
+
+const About = () => {
+  const [courses, setCourses] = useState(null);
+  useEffect(() => {
+    Axios.get(api.find((e) => e.pages === "khoa_hoc").api["khoa_hoc"]).then(
+      (res) => {
+        const data = res.data;
+        setCourses(data);
+        console.log(data);
+      }
+    );
+  }, []);
+  return (
+    <div>
+      <Accordion defaultActiveKey="0">{showsIntroduct(courses)}</Accordion>
+    </div>
+  );
 };
-export default connect(mapState)(About);
+
+export default About;

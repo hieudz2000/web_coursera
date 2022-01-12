@@ -1,15 +1,15 @@
 .nav {
   background-color: white;
-  color: rgb(204, 44, 44) !important;
+  //color: rgb(204, 44, 44) !important;
   margin-top: 20px;
-  li {
-    a {
-      i {
-        margin-right: 10px;
-        color: black !important;
-      }
-      padding: 0;
+
+  a.btn {
+    i {
+      margin-right: 10px;
+      display: inline-block;
       color: black !important;
     }
+    padding: 0;
+    color: black !important;
   }
 }

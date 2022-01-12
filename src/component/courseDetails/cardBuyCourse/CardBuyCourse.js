@@ -49,8 +49,6 @@ function CardBuyCourse() {
                 299,000
                 <sup>đ </sup>
               </span>
-
-              <del className="money-inital fw-light ms-2"> 800000đ </del>
               <span className="percent-sale fw-light"> ( 63% 0FF )</span>
             </div>
             <div className="sale-time mt-3 mb-3 icon-items">
@@ -61,12 +59,6 @@ function CardBuyCourse() {
               <button type="button" className="btn btn-danger w-100 mb-1">
                 ĐĂNG KÝ HỌC
               </button>
-              <button
-                type="button"
-                className="btn btn-success w-100 mt-1 icon-items"
-              >
-                <i className="fas fa-cart-plus "></i> Thêm vào giỏ hàng
-              </button>
             </div>
             <p className="text-center text-muted mt-3">
               Hoàn tiền trong 7 ngày nếu không hài lòng
@@ -75,25 +67,7 @@ function CardBuyCourse() {
           <h6 className="card-subtitle mb-2 text-muted">
             <ul className="nav flex-column">{showItems(items)}</ul>
           </h6>
-          <div className="footer-card">
-            <button
-              type="button"
-              className="btn btn-light w-100 icon-items btn-code-sale"
-            >
-              Bạn có mã giảm giá?
-            </button>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Nhập mã giảm giá..."
-                aria-label="Search"
-              />
-              <button className="btn btn-light" type="submit">
-                Áp dụng
-              </button>
-            </form>
-          </div>
+          <div className="footer-card"></div>
         </div>
       </div>
     </div>
