@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./cardBuyCourse.scss";
 import "./scrollCardBuyCourse.js";
 
@@ -39,6 +40,8 @@ function CardBuyCourse() {
     },
   ];
 
+  const ref = useRef();
+
   return (
     <div className="card-buy-course position-absolute">
       <div className="card">
@@ -49,12 +52,12 @@ function CardBuyCourse() {
                 299,000
                 <sup>đ </sup>
               </span>
-              <span className="percent-sale fw-light"> ( 63% 0FF )</span>
+              {/* <span className="percent-sale fw-light"> ( 63% 0FF )</span> */}
             </div>
-            <div className="sale-time mt-3 mb-3 icon-items">
+            {/* <div className="sale-time mt-3 mb-3 icon-items">
               <i className="fas fa-tachometer-alt"></i>
               Thời gian ưu đãi còn 1 ngày
-            </div>
+            </div> */}
             <div className="btn-add-card mt-2">
               <button type="button" className="btn btn-danger w-100 mb-1">
                 ĐĂNG KÝ HỌC
