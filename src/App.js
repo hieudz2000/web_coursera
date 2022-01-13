@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import { initMenu } from "./redux/actions/menus";
 import { connect } from "react-redux";
 import { initCourses } from "./redux/actions/course";
+import User from "./screen/user/User";
 class App extends Component {
   render() {
     return (
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/courseDetail" element={<CourseDetails />} />
             <Route path="/category/:id" element={<Category />} />
             <Route path="/teachers" element={<TeacherDetails />} />
+            <Route path="/user" element={<User />} />
           </Routes>
         </div>
         <div id="footer">

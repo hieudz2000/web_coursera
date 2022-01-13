@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./cardBuyCourse.scss";
 import "./scrollCardBuyCourse.js";
 
@@ -39,6 +40,8 @@ function CardBuyCourse() {
     },
   ];
 
+  const ref = useRef();
+
   return (
     <div className="card-buy-course position-absolute">
       <div className="card">
@@ -49,6 +52,7 @@ function CardBuyCourse() {
                 299,000
                 <sup>đ </sup>
               </span>
+              {/* <span className="percent-sale fw-light"> ( 63% 0FF )</span> */}
             </div>
             {/* <div className="sale-time mt-3 mb-3 icon-items">
               <i className="fas fa-tachometer-alt"></i>
@@ -66,6 +70,7 @@ function CardBuyCourse() {
           <h6 className="card-subtitle mb-2 text-muted">
             <ul className="nav flex-column">{showItems(items)}</ul>
           </h6>
+          <div className="footer-card"></div>
         </div>
       </div>
     </div>
